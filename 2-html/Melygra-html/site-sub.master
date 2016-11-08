@@ -1,0 +1,147 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="site-sub.master.cs" Inherits="site_sub" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <asp:ContentPlaceHolder id="banner" runat="server">
+     </asp:ContentPlaceHolder>
+    <div class="colContent">
+        <asp:ContentPlaceHolder id="colCotent" runat="server">
+
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="colAside">
+      <div class="book-onl">
+          <div class="boook-text"><span>ĐẶT HÀNG</span></div>
+          <div class="book-btn"><a class="btn-popup" href="#">Đặt ngay</a></div>
+          <div class="popup">
+            <div class="popup-content">
+                <h1>ĐẶT HÀNG ONLINE</h1>
+                <i>Vui lòng điền vào thông tin bên dưới để mua hàng</i>
+                <div class="form-popup">
+                    <div class="popup-w">
+                        <label class="popup-lb">Loại hàng</label>
+                        <select>
+                          <option value=""selected>--Loại hàng--</option>
+                          <option value="">Loại 1</option>
+                          <option value="">Loại 2</option>
+                          <option value="">Loại 3</option>
+                        </select>
+                    </div>
+                    <div class="popup-w">
+                        <label class="popup-lb">Họ tên</label>
+                        <div class="popup-input">
+                            <asp:TextBox ID="TextBox5" CssClass="contact-textbox" runat="server" placeholder=""></asp:TextBox>
+                        </div>
+                    </div>
+                     <div class="popup-w">
+                        <label class="popup-lb">Số điện thoại</label>
+                        <div class="popup-input">
+                            <asp:TextBox ID="TextBox6" CssClass="contact-textbox" runat="server" placeholder=""></asp:TextBox>
+                        </div>
+                    </div>
+                     <div class="popup-w">
+                        <label class="popup-lb">Email</label>
+                        <div class="popup-input">
+                            <asp:TextBox ID="TextBox7" CssClass="contact-textbox" runat="server" placeholder=""></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="popup-w">
+                        <div class="popup-btn">
+                            <asp:button ID="Button2" CssClass="button-btn" runat="server" text="TIẾN HÀNH ĐẶT HÀNG" />
+                        </div>
+                    </div>
+                </div>
+                <div class="popup-btn-close">
+                    <img src="assets/images/btn-close.png" alt=""/>
+                </div>
+            </div>
+        </div>
+      </div>
+        <div class="video-main">
+            <div class="wrapper-video">
+                <div class="video-details">
+                    <div id="jwplayer3"></div>
+                    <script type="text/javascript">
+                        $(document).ready(function () {
+                            jwplayer('jwplayer3').setup({
+                                image: "assets/images/video1.png",
+                                //image: '<%# "res/product/" + Eval("ImageName") %>',
+                                //file: '<%# !string.IsNullOrEmpty( Eval("VideoPath").ToString()) ? "res/product/video/" + Eval("VideoPath") : ""%>',
+                                file: "https://youtu.be/PDZH-x2nNRM",
+                                flashplayer: "assets/js/jwplayer.flash.swf",
+                                width: '100%',
+                                aspectratio: '16:9',
+                                primary: "html5",
+                                width: '100%',
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+            <div class="video-title">
+              Quảng cáo Melygra
+            </div>
+        </div>
+        <div class="recipe-aside">
+            <div class="rec-img">
+                <a href="#"><img src="assets/images/rec1.png" alt=""/></a>
+            </div>
+            <div class="rec-name">
+                <a href="#">Bí kíp <span>PHÒNG THE</span></a>
+            </div>
+        </div>
+        <div class="question-aside">
+            <p>Câu hỏi của bạn đọc sẽ được giải đáp bởi đội ngũ các chuyên gia giàu kinh nghiệm.</p>
+            <div class="ques-box">
+                 <h1>GỬI CÂU HỎI</h1>
+                <div class="form-ques">
+                     <div class="ques-w">
+                        <div class="ques-input">
+                            <asp:TextBox ID="txtFullName" CssClass="ques-textbox" runat="server" placeholder="Tiêu đề"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="ques-w">
+                        <div class="ques-input">
+                            <asp:TextBox ID="TextBox1" CssClass="ques-textbox" runat="server" placeholder="Họ tên"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="ques-w">
+                        <div class="ques-input">
+                            <asp:TextBox ID="TextBox2" CssClass="ques-textbox" runat="server" placeholder="Email"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="ques-w">
+                        <div class="ques-input">
+                            <asp:TextBox ID="TextBox4" CssClass="ques-area" runat="server" TextMode="MultiLine" placeholder="Nội dung câu hỏi"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="ques-w">
+                        <div class="ques-input">
+                            <asp:TextBox ID="TextBox3" CssClass="ques-textbox" runat="server" placeholder="Mã xác nhận"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="ques-w">
+                        <div class="ques-btn">
+                            <asp:button ID="Button1" CssClass="ques-btn" runat="server" text="Gửi câu hỏi" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div class="distribution-aside">
+           <div class="dis-name">
+               HỆ THỐNG PHÂN PHỐI
+           </div>
+           <div class="phone-aside">
+               TỔNG ĐÀI TƯ VẤN <span>(08) 3962 1798</span>
+           </div>
+       </div>
+        <div class="link-fb">
+            <img src="assets/images/fb-img.png" alt=""/>
+        </div>
+    </div>
+</asp:Content>
+

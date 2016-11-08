@@ -1,0 +1,89 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="site-htpp.master.cs" Inherits="site_htpp" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" Runat="Server">
+     <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+     <div class="colContent">
+         <div class="title-main">
+             <h1>Hệ thống phân phối</h1>
+         </div>
+        <div class="main-box">
+            <div class="search-main">
+                <div class="search-box">
+                    <span>TÌM KIẾM THEO</span>
+                    <div class="option-1">
+                        <select>
+                          <option value=""selected>Tỉnh/Thành Phố</option>
+                          <option value="">TP.HCM</option>
+                          <option value="">Hà Nội</option>
+                          <option value="">Đà Nẵng</option>
+                        </select>
+                    </div>
+                    <div class="option-2">
+                        <select>
+                          <option value=""selected>Quận/Huyện</option>
+                          <option value="">Quận 1</option>
+                          <option value="">Quận 2</option>
+                          <option value="">Quận 3</option>
+                        </select>
+                    </div>
+                     <asp:Button ID="Button2" CssClass="search-btn" runat="server" Text="" />
+                </div>
+            </div>
+                  <asp:ContentPlaceHolder id="colCotent" runat="server">
+                  </asp:ContentPlaceHolder>
+        </div>
+    </div>
+     <div class="colAside">
+       <div class="distribution-aside">
+           <div class="dis-name">
+               HỆ THỐNG <span>PHÂN PHỐI</span>
+           </div>
+           <div class="phone-aside">
+               TỔNG ĐÀI TƯ VẤN <span>(08) 3962 1798</span>
+           </div>
+       </div>
+         <div class="question-aside">
+            <p>Câu hỏi của bạn đọc sẽ được giải đáp bởi đội ngũ các chuyên gia giàu<br /> kinh nghiệm.</p>
+            <div class="ques-box">
+                 <h1>GỬI CÂU HỎI</h1>
+                <div class="form-ques">
+                     <div class="ques-w">
+                        <div class="ques-input">
+                            <asp:TextBox ID="txtFullName" CssClass="ques-textbox" runat="server" placeholder="Tiêu đề"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="ques-w">
+                        <div class="ques-input">
+                            <asp:TextBox ID="TextBox1" CssClass="ques-textbox" runat="server" placeholder="Họ tên"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="ques-w">
+                        <div class="ques-input">
+                            <asp:TextBox ID="TextBox2" CssClass="ques-textbox" runat="server" placeholder="Email"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="ques-w">
+                        <div class="ques-input">
+                            <asp:TextBox ID="TextBox4" CssClass="ques-area" runat="server" TextMode="MultiLine" placeholder="Nội dung câu hỏi"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="ques-w">
+                        <div class="ques-input">
+                            <asp:TextBox ID="TextBox3" CssClass="ques-textbox" runat="server" placeholder="Mã xác nhân"></asp:TextBox>
+                        </div>
+                    </div>
+                    <div class="ques-w">
+                        <div class="ques-btn">
+                            <asp:button ID="Button1" CssClass="ques-btn" runat="server" text="Gửi câu hỏi" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+</asp:Content>
+
