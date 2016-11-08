@@ -220,7 +220,7 @@ public partial class thong_tin_dat_hang : System.Web.UI.Page
             }
             Body += "</table>";
             Body += "<div style='clear: both;'></div>";
-            Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", txtEmail.Text, "hungtien408@gmail.com", "Đặt Hàng MELYGRA", Body, true);
+            Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", txtEmail.Text, "vinacarepharma@gmail.com", "Đặt Hàng MELYGRA", Body, true);
 
             ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "runtime", " $(document).ready(function () {alert('Chúc mừng bạn đã đặt hàng thành công !')});", true);
 

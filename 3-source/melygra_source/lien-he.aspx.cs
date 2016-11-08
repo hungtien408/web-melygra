@@ -19,7 +19,7 @@ public partial class lien_he : System.Web.UI.Page
         msg += "<b>Họ và tên: </b>" + txtHoTen.Text.Trim().ToString() + "<br />";
         msg += "<b>Email: </b>" + txtEmail.Text.Trim().ToString() + "<br />";
         msg += "<b>Nội dung: </b>" + txtNoiDung.Text.Trim().ToString();
-        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "cc@tranlegroup.com", "", "Contact MELYGRA", msg, true);
+        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "vinacarepharma@gmail.com", "", "Contact MELYGRA", msg, true);
     }
     protected void btGui_Click(object sender, EventArgs e)
     {
