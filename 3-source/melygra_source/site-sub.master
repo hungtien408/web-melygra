@@ -1,0 +1,72 @@
+﻿<%@ Master Language="C#" MasterPageFile="~/site.master" AutoEventWireup="true" CodeFile="site-sub.master.cs"
+    Inherits="site_sub" %>
+
+<%@ Register Src="~/uc/sendquestion.ascx" TagPrefix="uc1" TagName="sendquestion" %>
+<%@ Register TagPrefix="uc2" TagName="video" Src="~/uc/video.ascx" %>
+<%@ Register TagPrefix="uc3" TagName="bookonline" Src="~/uc/bookonline.ascx" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="Server">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="Server">
+    <asp:ContentPlaceHolder ID="banner" runat="server">
+    </asp:ContentPlaceHolder>
+    <div class="colContent">
+        <asp:ContentPlaceHolder ID="colCotent" runat="server">
+        </asp:ContentPlaceHolder>
+    </div>
+    <div class="colAside">
+        <div class="book-onl">
+            <div class="boook-text">
+                <span>ĐẶT HÀNG</span></div>
+            <div class="book-btn">
+                <a class="btn-popup" href="#">Đặt ngay</a></div>
+            <div class="popup">
+                <uc3:bookonline runat="server" ID="bookonline" />
+            </div>
+        </div>
+        <div class="video-main">
+            <div class="wrapper-video">
+                <uc2:video runat="server" ID="video" />
+            </div>
+            <div class="video-title">
+                Quảng cáo Melygra
+            </div>
+        </div>
+        <div class="recipe-aside">
+            <div class="rec-img">
+                <a href="bi-kip-phong-the.aspx">
+                    <img src="assets/images/rec1.png" alt="" /></a>
+            </div>
+            <div class="rec-name">
+                <a href="bi-kip-phong-the.aspx">Bí kíp <span>PHÒNG THE</span></a>
+            </div>
+        </div>
+        <div class="question-aside">
+            <p>
+                Câu hỏi của bạn đọc sẽ được giải đáp bởi đội ngũ các chuyên gia giàu kinh nghiệm.</p>
+            <uc1:sendquestion runat="server" ID="sendquestion" />
+        </div>
+        <div class="distribution-aside">
+            <div class="dis-name">
+                HỆ THỐNG PHÂN PHỐI
+            </div>
+            <div class="phone-aside">
+                TỔNG ĐÀI TƯ VẤN <span>(08) 3962 1798</span>
+            </div>
+        </div>
+        <div class="link-fb">
+            <%--<img src="assets/images/fb-img.png" alt=""/>--%>
+            <div id="facebook">
+                <div class="fb-page" data-href="https://www.facebook.com/bacsibezut" data-small-header="false"
+                    data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"
+                    data-show-posts="false">
+                    <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/bacsibezut">
+                            <a href="https://www.facebook.com/bacsibezut">Bezut</a></blockquote>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
