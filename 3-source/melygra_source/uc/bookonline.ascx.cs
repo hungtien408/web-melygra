@@ -20,7 +20,7 @@ public partial class uc_bookonline : System.Web.UI.UserControl
         msg += "<b>Họ và tên: </b>" + txtHoTen.Text.Trim().ToString() + "<br />";
         msg += "<b>Số điện thoại: </b>" + txtPhone.Text.Trim().ToString() + "<br />";
         msg += "<b>Email: </b>" + txtEmail.Text.Trim().ToString() + "<br />";
-        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "cc@tranlegroup.com", "", "Contact MELYGRA", msg, true);
+        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "vinacarepharma@gmail.com", "", "Contact MELYGRA", msg, true);
     }
     protected void btGui_Click(object sender, EventArgs e)
     {

@@ -70,7 +70,7 @@
             <div class="boook-text">
                 <span>ĐẶT HÀNG</span></div>
             <div class="book-btn">
-                <a class="btn-popup" href="#">Đặt ngay</a></div>
+                <a class="btn-popup" href="javascript:void(0);">Đặt ngay</a></div>
             <div class="popup">
                 <uc3:bookonline runat="server" ID="bookonline" />
             </div>
@@ -84,7 +84,17 @@
             </div>
         </div>
         <div class="link-fb">
-            <img src="assets/images/fb-img.png" alt="" />
+            <%--<img src="assets/images/fb-img.png" alt="" />--%>
+            <div id="facebook">
+                <div class="fb-page" data-href="https://www.facebook.com/bacsibezut" data-small-header="false"
+                    data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"
+                    data-show-posts="false">
+                    <div class="fb-xfbml-parse-ignore">
+                        <blockquote cite="https://www.facebook.com/bacsibezut">
+                            <a href="https://www.facebook.com/bacsibezut">Bezut</a></blockquote>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </asp:Content>

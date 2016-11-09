@@ -20,7 +20,7 @@
             <div class="boook-text">
                 <span>ĐẶT HÀNG</span></div>
             <div class="book-btn">
-                <a class="btn-popup" href="#">Đặt ngay</a></div>
+                <a class="btn-popup" href="javascript:void(0);">Đặt ngay</a></div>
             <div class="popup">
                 <uc3:bookonline runat="server" ID="bookonline" />
             </div>
