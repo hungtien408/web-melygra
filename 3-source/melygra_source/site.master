@@ -179,7 +179,7 @@
                             <li><a href="sinh-ly-nam.aspx">SINH LÝ NAM</a>
                                 <asp:ListView ID="lstSinhLyNam" runat="server" DataSourceID="odsSinhLyNam" EnableModelValidation="True">
                                     <ItemTemplate>
-                                        <li><a href='<%# progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
+                                        <li><a href='<%# !string.IsNullOrEmpty(Eval("ProductCategoryLink").ToString()) ? Eval("ProductCategoryLink") : progressTitle(Eval("ProductCategoryName")) + "-pci-" + Eval("ProductCategoryID") + ".aspx" %>'>
                                             <%# Eval("ProductCategoryName") %></a></li>
                                     </ItemTemplate>
                                     <LayoutTemplate>
