@@ -7,7 +7,7 @@ using System.Data;
 /// <summary>
 /// Summary description for CartItem
 /// </summary>
-public class ShoppingCart
+public class ShoppingCart2
 {
     public void CreateCart(
         string ProductID,
@@ -26,7 +26,7 @@ public class ShoppingCart
         bool autoIncreaseQuantity
         )
     {
-        var sessionCart = HttpContext.Current.Session["Cart"];
+        var sessionCart = HttpContext.Current.Session["Cart2"];
         DataTable dtCart;
         if (sessionCart == null)
         {
@@ -87,8 +87,7 @@ public class ShoppingCart
                     QuantityList,
                     Price
                 });
-            }
-            else
+            }else
             {
 
                 var Quantiy1 = Convert.ToInt32(existRow["Quantity"]);
@@ -106,16 +105,16 @@ public class ShoppingCart
             //        existRow["Quantity"] = Quantity;
             //}
         }
-        HttpContext.Current.Session["Cart"] = dtCart;
+        HttpContext.Current.Session["Cart2"] = dtCart;
     }
 
     public bool HasItem(string ProductID)
     {
         var isExist = false;
 
-        if (HttpContext.Current.Session["Cart"] != null)
+        if (HttpContext.Current.Session["Cart2"] != null)
         {
-            var dtCart = (HttpContext.Current.Session["Cart"] as DataTable).DefaultView;
+            var dtCart = (HttpContext.Current.Session["Cart2"] as DataTable).DefaultView;
 
             dtCart.RowFilter = "ProductID = " + ProductID;
 
@@ -127,9 +126,9 @@ public class ShoppingCart
 
     public void DeleteItem(string ProductID, string ProductOptionCategoryID, string ProductLengthID)
     {
-        if (HttpContext.Current.Session["Cart"] != null)
+        if (HttpContext.Current.Session["Cart2"] != null)
         {
-            var dtCart = (HttpContext.Current.Session["Cart"] as DataTable).DefaultView;
+            var dtCart = (HttpContext.Current.Session["Cart2"] as DataTable).DefaultView;
 
             var firstOrDefault = (from DataRowView dr in dtCart
                                   where dr["ProductID"].ToString() == ProductID
@@ -139,28 +138,42 @@ public class ShoppingCart
             if (firstOrDefault != null)
                 firstOrDefault.Delete();
 
-            HttpContext.Current.Session["Cart"] = dtCart.ToTable();
+            HttpContext.Current.Session["Cart2"] = dtCart.ToTable();
+        }
+    }
+
+    public void DeleteItem(string ProductID)
+    {
+        if (HttpContext.Current.Session["Cart2"] != null)
+        {
+            var dtCart = (HttpContext.Current.Session["Cart2"] as DataTable).DefaultView;
+
+            (from DataRowView dr in dtCart
+             where dr["ProductID"].ToString() == ProductID
+             select dr).FirstOrDefault().Delete();
+
+            HttpContext.Current.Session["Cart2"] = dtCart.ToTable();
         }
     }
 
     public void DeleteAllItem()
     {
-        if (HttpContext.Current.Session["Cart"] != null)
+        if (HttpContext.Current.Session["Cart2"] != null)
         {
-            var dtCart = (HttpContext.Current.Session["Cart"] as DataTable).DefaultView;
+            var dtCart = (HttpContext.Current.Session["Cart2"] as DataTable).DefaultView;
             foreach (DataRowView dr in dtCart)
             {
                 dr.Delete();
             }
-            HttpContext.Current.Session["Cart"] = dtCart.ToTable();
+            HttpContext.Current.Session["Cart2"] = dtCart.ToTable();
         }
     }
 
     public void UpdateQuantity(string ProductID, string ProductLengthID, string ProductOptionCategoryID, string Quantity)
     {
-        if (HttpContext.Current.Session["Cart"] != null)
+        if (HttpContext.Current.Session["Cart2"] != null)
         {
-            var dtCart = HttpContext.Current.Session["Cart"] as DataTable;
+            var dtCart = HttpContext.Current.Session["Cart2"] as DataTable;
 
             (from DataRow dr in dtCart.Rows
              where dr["ProductID"].ToString() == ProductID
@@ -168,15 +181,15 @@ public class ShoppingCart
              && dr["ProductOptionCategoryID"].ToString() == ProductOptionCategoryID
              select dr).FirstOrDefault()["Quantity"] = Quantity;
 
-            HttpContext.Current.Session["Cart"] = dtCart;
+            HttpContext.Current.Session["Cart2"] = dtCart;
         }
     }
 
     public void UpdateQuantityList(string ProductID, string ProductLengthID, string ProductOptionCategoryID, string Quantity, string QuantityList)
     {
-        if (HttpContext.Current.Session["Cart"] != null)
+        if (HttpContext.Current.Session["Cart2"] != null)
         {
-            var dtCart = HttpContext.Current.Session["Cart"] as DataTable;
+            var dtCart = HttpContext.Current.Session["Cart2"] as DataTable;
 
             var existRow = (from DataRow dr in dtCart.Rows
                             where dr["ProductID"].ToString() == ProductID
@@ -191,23 +204,23 @@ public class ShoppingCart
                 existRow["Quantity"] = Quantity;
                 existRow["QuantityList"] = QuantityList;
             }
-            HttpContext.Current.Session["Cart"] = dtCart;
+            HttpContext.Current.Session["Cart2"] = dtCart;
         }
     }
 
     public DataTable Cart()
     {
-        if (HttpContext.Current.Session["Cart"] != null)
-            return HttpContext.Current.Session["Cart"] as DataTable;
+        if (HttpContext.Current.Session["Cart2"] != null)
+            return HttpContext.Current.Session["Cart2"] as DataTable;
 
         return null;
     }
 
     public DataTable CartSelectOne(string ProductID)
     {
-        if (HttpContext.Current.Session["Cart"] != null)
+        if (HttpContext.Current.Session["Cart2"] != null)
         {
-            var dtCart = HttpContext.Current.Session["Cart"] as DataTable;
+            var dtCart = HttpContext.Current.Session["Cart2"] as DataTable;
 
             var existRow = (from DataRow dr in dtCart.Rows
              where dr["ProductID"].ToString() == ProductID

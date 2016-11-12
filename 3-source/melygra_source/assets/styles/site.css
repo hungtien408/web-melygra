@@ -1899,7 +1899,9 @@ body .mobilep-right {
     background-position: right top;
 }
 /*/============= popup =============/*/
-
+.mCSB_inside > .mCSB_container {
+    margin-right:0;
+}
 #overlay-screen-active {
     position:fixed;
     background:rgba(0,0,0,0.5);
@@ -1915,8 +1917,8 @@ body .mobilep-right {
 .popup .popup-content {
     background:#fff url(../images/bg-popup.png) no-repeat top center;
     width:830px;
-    height:410px;
-    padding: 25px 10px 10px 50px;
+    height:450px;
+    padding: 25px 10px 10px 20px;
     border-radius:10px;
     position:fixed;
     top:-250%;
@@ -1936,6 +1938,7 @@ body .mobilep-right {
     top:-15px;
     right:-15px;
     cursor:pointer;
+    display:none;
 }
 .popup .popup-content h1 {
   color: #0391fd;
@@ -1944,12 +1947,13 @@ body .mobilep-right {
   padding: 10px 0;
 }
 .popup-lb {
-  width: 110px;
+  width: 95px;
     vertical-align: top;
+    /*background:#fff;*/
 }
 .popup-input {
   display: inline-block;
-  width:275px;
+  width:255px;
   margin-bottom:10px;
 }
 .popup-input .text-capcha, .popup-input .capcha {
@@ -1959,7 +1963,7 @@ body .mobilep-right {
 .popup-w select {
   height: 35px;
   margin-bottom: 10px;
-  width: 275px;
+  width: 255px;
 }
 .popup-input input {
   border: 1px solid #ccc;
@@ -1986,6 +1990,38 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b80000', end
 }
 .popup-btn {
   margin-left: 110px;
+}
+.table-book {
+  background: #fff;
+  border: 1px solid #ddd;
+  padding:5px;
+  height:148px;
+  overflow-y:scroll;
+}
+    .table-book tr {
+        border-bottom: 1px solid #ddd;
+        line-height:30px;
+    }
+        .table-book tr:last-child {
+            border-bottom:0;
+        }
+.book-name {
+    width:60%;
+}
+.book-number, .book-cancel {
+    width:20%;
+    text-align:center;
+}
+.book-number1, .book-cancel1 {
+    text-align:center;
+}
+.table-book table {
+    width:100%;
+}
+.text-number {
+  margin: 3px 0;
+  width: 35px;
+  height: 30px;
 }
 /*===============suc-khoe-tong-hop=============*/
 .slide-head {
@@ -2923,11 +2959,25 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b80000', end
   display:block;
   max-width:100%;
 }
+.popup-w {
+  width: 48%;
+  float: left;
+}
 .menu-nav .home {
     display:none;
 }
-#print, #download {
-    display:none;
+
+#toolbarViewerRight {
+    display:none !important;
+}
+#print::after, #download:after {
+    position:absolute;
+    content:"";
+    width:20px;
+    height:20px;
+    left:0;
+    top:0;
+    background:#474747;
 }
 .phongthe {
     width:100% !important;

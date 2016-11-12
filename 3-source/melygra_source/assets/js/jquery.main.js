@@ -3,10 +3,18 @@
 (function ($) {
     $(window).load(function () {
         EqualSizer('.item-news');
+        //fixheight();
+    });
+    $(window).resize(function () {
+        //fixheight();
     });
     $(function () {
         myfunload();
         mypageload();
+        $('.popup-content').mCustomScrollbar({
+            autoHideScrollbar: true,
+            theme: "dark-thick",
+        });
     });
 })(jQuery);
 //function===============================================================================================
@@ -186,9 +194,11 @@ function EqualSizer(myclass) {
 $('.btn-popup').click(function () {
     $('#mainContent').append('<div id="overlay-screen-active">');
     $('.popup-content').css('top', '0');
+
+    
 });
 $(window).ready(function () {
-    //var win_height = $(window).height();
+    var win_height = $(window).height();
     $('.popup-content').css('max-height', 80 + "%");
 });
 $(document).on('click', ".popup-btn-close, #overlay-screen-active", function () {
@@ -204,6 +214,7 @@ $(document).ready(function () {
             $('#mainContent').append('<div id="overlay-screen-active">');
             $('#overlay-screen-active').remove();
             $('.popup-content').css('top', '0');
+
         });
         $(document).on('click', ".popup-btn-close, #overlay-screen-active", function () {
             $('.popup-content').css('top', '-250%');
@@ -292,3 +303,8 @@ function myaccessfull(namePopup, title, text) {
     $('a[data-target="#' + namePopup + '"]').trigger("click");
 }
 document.write("<script type='text/javascript' language='javascript'>MainContentW =980 ;LeftBannerW = 150;RightBannerW = 150;LeftAdjust = 5;RightAdjust = 5;TopAdjust = 10;ShowAdDiv();window.onresize=ShowAdDiv;;<\/script>");
+//==================
+//=================height-header=====================
+function fixheight() {
+        
+}
