@@ -13,6 +13,7 @@
         <asp:ListView ID="lstBKDetails" runat="server" DataSourceID="odsBKDetails" EnableModelValidation="True">
             <ItemTemplate>
                 <div class="file-pdf">
+                    <div class="hidebg"></div>
                     <a class="media" href='<%# "res/product/download/" + Eval("LinkDownload") %>'></a>
                 </div>
             </ItemTemplate>
