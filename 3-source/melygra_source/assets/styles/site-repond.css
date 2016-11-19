@@ -400,6 +400,15 @@
       float: none;
       width: 100%;
     }
+    .popup-w select, .popup-input {
+      width: 80%;
+    }
+    .popup .popup-content {
+        overflow-y:scroll;
+    }
+    .from-danghang, .form-thongtin {
+        width:100%;
+    }
     .table-book {
         width:95%;
     }
@@ -626,9 +635,7 @@
     .item-news {
         width:100%;
     }
-    .popup .popup-content {
-        height:auto;
-    }
+  
     .popup-btn {
       margin-left: 60px;
     }

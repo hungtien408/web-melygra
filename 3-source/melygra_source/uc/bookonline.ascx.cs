@@ -5,13 +5,17 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using Telerik.Web.UI.AutoCompleteBox;
 using TLLib;
 
 public partial class uc_bookonline : System.Web.UI.UserControl
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        if (!Page.IsPostBack)
+        {
+            dropListLoaiHang.SelectedIndex = -1;
+        }
     }
 
     private void sendEmail()
@@ -23,6 +27,7 @@ public partial class uc_bookonline : System.Web.UI.UserControl
         msg += "<b>Họ và tên: </b>" + txtHoTen.Text.Trim().ToString() + "<br />";
         msg += "<b>Số điện thoại: </b>" + txtPhone.Text.Trim().ToString() + "<br />";
         msg += "<b>Email: </b>" + txtEmail.Text.Trim().ToString() + "<br /><br />";
+        //msg += "<b>Ghi chú: </b>" + txtContent.Text.Trim().ToString() + "<br /><br />";
         msg += "<table style='font-size: 11px; font-family: Verdana; padding: 10px; border: 1px solid #C7D7DB; width: 100%;border-collapse: collapse;' cellpadding='0' cellspacing='0'>";
         //Body += "<tr><th align='left' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Sản phẩm/Cart Items</th><th style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Cỡ/Size</th><th style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Số lượng/Qty</th><th align='center' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Giá/Item Price</th><th align='right' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Thành tiền/Item Total</th></tr>";
         msg += "<tr><th align='left' style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Sản phẩm/Cart Items</th><th style='padding: 8px 5px; border-collapse: collapse; background-color: rgb(2,11,111);color: #fff;'>Số lượng/Qty</th></tr>";
@@ -52,7 +57,12 @@ public partial class uc_bookonline : System.Web.UI.UserControl
         msg += "</table>";
         msg += "<div style='clear: both;'></div>";
         Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "vinacarepharma@gmail.com", "", "Contact MELYGRA", msg, true);
-        
+
+    }
+    protected void DropDownList_DataBound(object sender, EventArgs e)
+    {
+        var ddl = (DropDownList)sender;
+        ddl.Items.Insert(0, new ListItem("-- Loại hàng --", ""));
     }
     protected void btGui_Click(object sender, EventArgs e)
     {
@@ -83,21 +93,24 @@ public partial class uc_bookonline : System.Web.UI.UserControl
     protected void dropListLoaiHang_SelectedIndexChanged(object sender, EventArgs e)
     {
         var oShoppingCart = new ShoppingCart2();
-        oShoppingCart.CreateCart(
-            dropListLoaiHang.SelectedItem.Value, 
-            "", 
-            dropListLoaiHang.SelectedItem.Text, 
-            "", 
-            "", 
-            "", 
-            "", 
-            "", 
-            "", 
-            "", 
-            "1", 
-            "", 
-            0, 
-            false);
+        if (dropListLoaiHang.SelectedItem.Value != null && dropListLoaiHang.SelectedItem.Value != "")
+        {
+            oShoppingCart.CreateCart(
+                dropListLoaiHang.SelectedItem.Value,
+                "",
+                dropListLoaiHang.SelectedItem.Text,
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "",
+                "1",
+                "",
+                0,
+                false);
+        }
         ListView1.DataBind();
     }
 

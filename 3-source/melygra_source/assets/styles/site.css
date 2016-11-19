@@ -1990,12 +1990,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b80000', end
 }
 .popup-btn {
   margin-left: 110px;
+  float:left;
+  padding-bottom:20px;
 }
 .table-book {
   background: #fff;
   border: 1px solid #ddd;
   padding:5px;
   height:148px;
+    width: 95%;
   overflow-y:scroll;
 }
     .table-book tr {
@@ -2960,8 +2963,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b80000', end
   max-width:100%;
 }
 .popup-w {
-  width: 48%;
+  width: 100%;
+}
+.form-thongtin {
   float: left;
+}
+.from-danghang {
+  float: left;
+  width: 48%;
 }
 .menu-nav .home {
     display:none;
