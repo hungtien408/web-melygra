@@ -64,7 +64,7 @@
                 </asp:ObjectDataSource>
             </div>
         </div>
-        <div class="product-info">
+        <%--<div class="product-info">
             <h1>
                 Kiến thức bệnh học</h1>
             <asp:ListView ID="lstKienThuc" runat="server" DataSourceID="odsKienThuc" EnableModelValidation="True">
@@ -112,7 +112,7 @@
                     <asp:Parameter DefaultValue="True" Name="SortByPriority" Type="String" />
                 </SelectParameters>
             </asp:ObjectDataSource>
-        </div>
+        </div>--%>
     </div>
     <div class="colAside">
         <div class="book-onl">
