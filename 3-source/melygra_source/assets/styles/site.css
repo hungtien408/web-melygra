@@ -2995,8 +2995,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b80000', end
     position: relative;
 }
 .hidebg {
-    background-color: #000;
-    width: 98%;
-    height: 60px;
+    background-color: #525659;
+    height: 32px;
     position: absolute;
+    width: 12%;
+    right: 20px;
+    top: 2px;
 }
