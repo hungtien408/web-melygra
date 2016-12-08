@@ -106,11 +106,11 @@
                                 <asp:Parameter Name="OriginID" Type="String" />
                                 <asp:Parameter Name="Tag" Type="String" />
                                 <asp:Parameter Name="InStock" Type="String" />
-                                <asp:Parameter Name="IsHot" Type="String" />
+                                <asp:Parameter DefaultValue="True" Name="IsHot" Type="String" />
                                 <asp:Parameter Name="IsNew" Type="String" />
                                 <asp:Parameter Name="IsBestSeller" Type="String" />
                                 <asp:Parameter Name="IsSaleOff" Type="String" />
-                                <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                 <asp:Parameter Name="FromDate" Type="String" />
                                 <asp:Parameter Name="ToDate" Type="String" />
                                 <asp:Parameter Name="Priority" Type="String" />
@@ -157,11 +157,11 @@
                                 <asp:Parameter Name="OriginID" Type="String" />
                                 <asp:Parameter Name="Tag" Type="String" />
                                 <asp:Parameter Name="InStock" Type="String" />
-                                <asp:Parameter Name="IsHot" Type="String" />
+                                <asp:Parameter DefaultValue="True" Name="IsHot" Type="String" />
                                 <asp:Parameter Name="IsNew" Type="String" />
                                 <asp:Parameter Name="IsBestSeller" Type="String" />
                                 <asp:Parameter Name="IsSaleOff" Type="String" />
-                                <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                 <asp:Parameter Name="FromDate" Type="String" />
                                 <asp:Parameter Name="ToDate" Type="String" />
                                 <asp:Parameter Name="Priority" Type="String" />
@@ -245,11 +245,11 @@
                                 <asp:Parameter Name="OriginID" Type="String" />
                                 <asp:Parameter Name="Tag" Type="String" />
                                 <asp:Parameter Name="InStock" Type="String" />
-                                <asp:Parameter Name="IsHot" Type="String" />
+                                <asp:Parameter DefaultValue="True" Name="IsHot" Type="String" />
                                 <asp:Parameter Name="IsNew" Type="String" />
                                 <asp:Parameter Name="IsBestSeller" Type="String" />
                                 <asp:Parameter Name="IsSaleOff" Type="String" />
-                                <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                 <asp:Parameter Name="FromDate" Type="String" />
                                 <asp:Parameter Name="ToDate" Type="String" />
                                 <asp:Parameter Name="Priority" Type="String" />
@@ -296,11 +296,11 @@
                                 <asp:Parameter Name="OriginID" Type="String" />
                                 <asp:Parameter Name="Tag" Type="String" />
                                 <asp:Parameter Name="InStock" Type="String" />
-                                <asp:Parameter Name="IsHot" Type="String" />
+                                <asp:Parameter DefaultValue="True" Name="IsHot" Type="String" />
                                 <asp:Parameter Name="IsNew" Type="String" />
                                 <asp:Parameter Name="IsBestSeller" Type="String" />
                                 <asp:Parameter Name="IsSaleOff" Type="String" />
-                                <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                 <asp:Parameter Name="FromDate" Type="String" />
                                 <asp:Parameter Name="ToDate" Type="String" />
                                 <asp:Parameter Name="Priority" Type="String" />
@@ -382,11 +382,11 @@
                                 <asp:Parameter Name="OriginID" Type="String" />
                                 <asp:Parameter Name="Tag" Type="String" />
                                 <asp:Parameter Name="InStock" Type="String" />
-                                <asp:Parameter Name="IsHot" Type="String" />
+                                <asp:Parameter DefaultValue="True" Name="IsHot" Type="String" />
                                 <asp:Parameter Name="IsNew" Type="String" />
                                 <asp:Parameter Name="IsBestSeller" Type="String" />
                                 <asp:Parameter Name="IsSaleOff" Type="String" />
-                                <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                 <asp:Parameter Name="FromDate" Type="String" />
                                 <asp:Parameter Name="ToDate" Type="String" />
                                 <asp:Parameter Name="Priority" Type="String" />
@@ -432,11 +432,11 @@
                                 <asp:Parameter Name="OriginID" Type="String" />
                                 <asp:Parameter Name="Tag" Type="String" />
                                 <asp:Parameter Name="InStock" Type="String" />
-                                <asp:Parameter Name="IsHot" Type="String" />
+                                <asp:Parameter DefaultValue="True" Name="IsHot" Type="String" />
                                 <asp:Parameter Name="IsNew" Type="String" />
                                 <asp:Parameter Name="IsBestSeller" Type="String" />
                                 <asp:Parameter Name="IsSaleOff" Type="String" />
-                                <asp:Parameter DefaultValue="True" Name="IsShowOnHomePage" Type="String" />
+                                <asp:Parameter Name="IsShowOnHomePage" Type="String" />
                                 <asp:Parameter Name="FromDate" Type="String" />
                                 <asp:Parameter Name="ToDate" Type="String" />
                                 <asp:Parameter Name="Priority" Type="String" />

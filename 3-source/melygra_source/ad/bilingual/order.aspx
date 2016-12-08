@@ -87,7 +87,7 @@
         <img alt="" src="../assets/images/order.png" class="vam" />
         Đơn Hàng</h3>
     <br />
-    <asp:RadAjaxPanel ID="RadAjaxPanel1" runat="server" ClientEvents-OnRequestStart="conditionalPostback">
+    <%--<asp:RadAjaxPanel ID="RadAjaxPanel1" runat="server" ClientEvents-OnRequestStart="conditionalPostback">--%>
         <asp:Panel ID="pnlSearch" DefaultButton="btnSearch" runat="server">
             <table class="search">
                 <tr>
@@ -687,7 +687,7 @@
             <HeaderContextMenu EnableImageSprites="True" CssClass="GridContextMenu GridContextMenu_Default">
             </HeaderContextMenu>
         </asp:RadGrid>
-    </asp:RadAjaxPanel>
+    <%--</asp:RadAjaxPanel>--%>
     <asp:ObjectDataSource ID="OdsOrder" runat="server" SelectMethod="OrdersSelectAll"
         TypeName="TLLib.Orders" DeleteMethod="OrdersDelete" InsertMethod="OrdersInsert"
         UpdateMethod="OrdersUpdate">

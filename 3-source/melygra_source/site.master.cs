@@ -41,4 +41,14 @@ public partial class site : System.Web.UI.MasterPage
     {
         return TLLib.Common.ConvertTitle(input.ToString());
     }
+
+    protected void btnSearch_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("tim-kiem.aspx?kw=" + txtSearch.Text.Trim());
+    }
+
+    protected void btnSearch2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("tim-kiem.aspx?kw=" + txtSearch2.Text.Trim());
+    }
 }

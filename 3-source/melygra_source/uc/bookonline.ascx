@@ -132,7 +132,7 @@
                                     </td>
                                     <td class="book-number1">
                                         <asp:TextBox ID="txtQuantity" type="number" CssClass="text-number" runat="server"
-                                            Text='<%# Eval("Quantity") %>'></asp:TextBox>
+                                            Text='<%# Eval("Quantity") %>' OnTextChanged="txtQuantity_TextChanged" AutoPostBack="True"></asp:TextBox>
                                         <asp:HiddenField ID="hdnQuantity" runat="server" Value='<%# Eval("Quantity") %>' />
                                         <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtQuantity"
                                             Display="Dynamic" ErrorMessage="Vui lòng nhập số!" ValidationExpression="^[0-9]+$"

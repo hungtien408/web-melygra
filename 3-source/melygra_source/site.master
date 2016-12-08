@@ -148,9 +148,12 @@
                             </div>
                             <div class="col-xs-9 hotline-w">
                                 <div class="form-search corner desktop-992">
-                                    <asp:Button ID="Button1" CssClass="search-btn" runat="server" Text="" />
+                                    <asp:Button ID="btnSearch" CssClass="search-btn" runat="server" Text="" OnClick="btnSearch_Click" />
                                     <div class="search-input">
-                                        <asp:TextBox ID="TextBox1" CssClass="search-text" runat="server" placeholder="Tìm kiếm..."></asp:TextBox>
+                                        <asp:TextBox ID="txtSearch" runat="server" CssClass="search-text"></asp:TextBox>
+                                        <asp:TextBoxWatermarkExtender ID="txtSearch_TextBoxWatermarkExtender" runat="server"
+                                            Enabled="True" WatermarkText="Tìm kiếm..." TargetControlID="txtSearch">
+                                        </asp:TextBoxWatermarkExtender>
                                     </div>
                                 </div>
                                 <div class="follow-head">
@@ -248,9 +251,12 @@
                             <li><a href="lien-he.aspx">LIÊN HỆ</a> </li>
                         </ul>
                         <div class="form-search corner ipadmo-992">
-                            <asp:Button ID="Button2" CssClass="search-btn" runat="server" Text="" />
+                            <asp:Button ID="btnSearch2" CssClass="search-btn" runat="server" Text="" OnClick="btnSearch2_Click" />
                             <div class="search-input">
-                                <asp:TextBox ID="TextBox2" CssClass="search-text" runat="server" placeholder="Tìm kiếm..."></asp:TextBox>
+                                <asp:TextBox ID="txtSearch2" runat="server" CssClass="search-text"></asp:TextBox>
+                                <asp:TextBoxWatermarkExtender ID="TextBoxWatermarkExtender1" runat="server" Enabled="True"
+                                    WatermarkText="Tìm kiếm..." TargetControlID="txtSearch2">
+                                </asp:TextBoxWatermarkExtender>
                             </div>
                         </div>
                         <div class="clearfix">

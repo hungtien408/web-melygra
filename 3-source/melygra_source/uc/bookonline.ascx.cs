@@ -56,7 +56,7 @@ public partial class uc_bookonline : System.Web.UI.UserControl
         }
         msg += "</table>";
         msg += "<div style='clear: both;'></div>";
-        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "vinacarepharma@gmail.com", "", "Contact MELYGRA", msg, true);
+        Common.SendMail("smtp.gmail.com", 587, "webmastersendmail0401@gmail.com", "web123master", "marketing.vinacarepharma@gmail.com", "", "Contact MELYGRA", msg, true);
 
     }
     protected void DropDownList_DataBound(object sender, EventArgs e)
@@ -70,6 +70,48 @@ public partial class uc_bookonline : System.Web.UI.UserControl
         {
             if (RadCaptcha1.IsValid)
             {
+                var oOrders = new Orders();
+                var oOrderDetail = new OrderDetail();
+                var dtCart = Session["Cart2"] as DataTable;
+                var OrderNumber = DateTime.Now.ToString("ddMMyy") + Guid.NewGuid().GetHashCode().ToString("X").Substring(0, 4);
+
+                oOrders.OrdersInsert2(
+                               OrderNumber,
+                               txtEmail.Text,
+                               txtEmail.Text,
+                               txtHoTen.Text,
+                               txtPhone.Text,
+                               "1",
+                               "1",
+                               "1",
+                               "",
+                               "",
+                               "",
+                               "",
+                               "1",
+                               "",
+                               txtAddress.Text,
+                               "1"
+                               );
+
+                foreach (DataRow dr in dtCart.Rows)
+                {
+                    string ProductID = dr["ProductID"].ToString();
+                    string Quantity = dr["Quantity"].ToString();
+                    string Price = dr["Price"].ToString();
+                    string CreateBy = txtEmail.Text;
+                    //string ProductName = dr["ProductName"].ToString();
+
+                    oOrderDetail.OrderDetailInsert(
+                       OrderNumber,
+                       ProductID,
+                       Quantity,
+                       Price,
+                       CreateBy,
+                       "",
+                       ""
+                    );
+                }
 
                 //send email         
                 sendEmail();
@@ -83,16 +125,22 @@ public partial class uc_bookonline : System.Web.UI.UserControl
                 txtHoTen.Text = "";
                 txtPhone.Text = "";
                 txtEmail.Text = "";
+                Session["Cart2"] = null;
             }
-            else
-            {
-                //lblCheckResult.Text = "Chuỗi xác nhận chưa đúng !";
-            }
+            
+        }
+        else
+        {
+            //lblCheckResult.Text = "Chuỗi xác nhận chưa đúng !";
+            ScriptManager.RegisterClientScriptBlock(Page, Page.GetType(), "runtime", " $(document).ready(function () {$('.btn-popup').trigger('click');});", true);
         }
     }
     protected void dropListLoaiHang_SelectedIndexChanged(object sender, EventArgs e)
     {
         var oShoppingCart = new ShoppingCart2();
+        var oProduct = new Product();
+        var dataPrice = oProduct.ProductSelectOne(dropListLoaiHang.SelectedItem.Value.ToString()).DefaultView;
+        double Price = Convert.ToDouble(dataPrice[0]["Price"].ToString());
         if (dropListLoaiHang.SelectedItem.Value != null && dropListLoaiHang.SelectedItem.Value != "")
         {
             oShoppingCart.CreateCart(
@@ -108,7 +156,7 @@ public partial class uc_bookonline : System.Web.UI.UserControl
                 "",
                 "1",
                 "",
-                0,
+                Price,
                 false);
         }
         ListView1.DataBind();
@@ -128,6 +176,30 @@ public partial class uc_bookonline : System.Web.UI.UserControl
             var oShoppingCart = new ShoppingCart2();
             oShoppingCart.DeleteItem(ProductID);
             ListView1.DataBind();
+        }
+    }
+
+    protected void txtQuantity_TextChanged(object sender, EventArgs e)
+    {
+        var textbox = (TextBox)sender;
+        var parent = textbox.NamingContainer;
+
+        var oShoppingCart = new ShoppingCart2();
+
+        var Quantity = (parent.FindControl("txtQuantity") as TextBox).Text.Trim();
+        var ProductID = (parent.FindControl("hdnProductID") as HiddenField).Value;
+        var ProductOptionCategoryID = "";//(parent.FindControl("hdnCartProductOptionCategoryID") as HiddenField).Value;
+        var ProductLengthID = "";//(parent.FindControl("hdnCartProductLengthID") as HiddenField).Value;
+        int Quantity1 = Int32.Parse(Quantity);
+        if (Quantity1 > 0 && Quantity1 < 12)
+        {
+            oShoppingCart.UpdateQuantity(ProductID, ProductLengthID, ProductOptionCategoryID, Quantity);
+            ListView1.DataBind();
+        }
+        else
+        {
+            Quantity = "1";
+            ScriptManager.RegisterClientScriptBlock((TextBox)sender, sender.GetType(), "runtime", "alert('Bạn nhập quá số lượng cho phép (1 - 12)')", true);
         }
     }
 }
