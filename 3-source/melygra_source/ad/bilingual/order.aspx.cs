@@ -199,8 +199,11 @@ public partial class ad_single_order : System.Web.UI.Page
             foreach (GridDataItem item in RadGrid1.SelectedItems)
             {
                 string ShippingAddressID = item["ShippingAddressID"].Text;
-                var oAddressBook = new AddressBook();
-                oAddressBook.AddressBookDelete(ShippingAddressID);
+                if (ShippingAddressID != "" && ShippingAddressID != "&nbsp;")
+                {
+                    var oAddressBook = new AddressBook();
+                    oAddressBook.AddressBookDelete(ShippingAddressID);
+                }
             }
         }
     }

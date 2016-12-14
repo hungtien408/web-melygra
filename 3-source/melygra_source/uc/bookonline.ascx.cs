@@ -124,7 +124,10 @@ public partial class uc_bookonline : System.Web.UI.UserControl
                 //
                 txtHoTen.Text = "";
                 txtPhone.Text = "";
+                txtAddress.Text = "";
                 txtEmail.Text = "";
+                ShoppingCart2 shopCart2 = new ShoppingCart2();
+                shopCart2.DeleteAllItem();
                 Session["Cart2"] = null;
             }
             

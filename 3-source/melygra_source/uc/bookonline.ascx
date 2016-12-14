@@ -2,8 +2,7 @@
 <%@ Register TagPrefix="asp" Namespace="Telerik.Web.UI" Assembly="Telerik.Web.UI, Version=2012.3.1016.35, Culture=neutral, PublicKeyToken=121fae78165ba3d4" %>
 <%@ Register TagPrefix="asp" Namespace="AjaxControlToolkit" Assembly="AjaxControlToolkit, Version=3.5.40412.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e" %>
 <div class="popup-content">
-    <h1>
-        ĐẶT HÀNG ONLINE</h1>
+    <h1>ĐẶT HÀNG ONLINE</h1>
     <i>Vui lòng điền vào thông tin bên dưới để mua hàng</i>
     <div class="form-popup">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
@@ -50,8 +49,8 @@
                         </asp:ObjectDataSource>
                     </div>
                     <div class="popup-w">
-                    <div class="table-book table-responsive">
-                        <%--<table>
+                        <div class="table-book table-responsive">
+                            <%--<table>
                             <tr>
                                 <th class="book-name">
                                     Sản phẩm
@@ -122,56 +121,52 @@
                                 </td>
                             </tr>
                         </table>--%>
-                        <asp:ListView ID="ListView1" runat="server" DataSourceID="odsCart" EnableModelValidation="True"
-                            OnItemCommand="ListView1_ItemCommand">
-                            <ItemTemplate>
-                                <tr>
-                                    <td class="book-name1">
-                                        <%# Eval("ProductName")%>
-                                        <asp:HiddenField ID="hdnProductID" runat="server" Value='<%# Eval("ProductID") %>' />
-                                    </td>
-                                    <td class="book-number1">
-                                        <asp:TextBox ID="txtQuantity" type="number" CssClass="text-number" runat="server"
-                                            Text='<%# Eval("Quantity") %>' OnTextChanged="txtQuantity_TextChanged" AutoPostBack="True"></asp:TextBox>
-                                        <asp:HiddenField ID="hdnQuantity" runat="server" Value='<%# Eval("Quantity") %>' />
-                                        <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtQuantity"
-                                            Display="Dynamic" ErrorMessage="Vui lòng nhập số!" ValidationExpression="^[0-9]+$"
-                                            ValidationGroup="SendEmail"></asp:RegularExpressionValidator>
-                                        <asp:RangeValidator ID="RangeValidator" runat="server" ErrorMessage="Bạn nhập quá số lượng cho phép (1 - 12)"
-                                            ControlToValidate="txtQuantity" MaximumValue="12" MinimumValue="1" Type="Integer"
-                                            ValidationGroup="SendEmail" Display="Dynamic"></asp:RangeValidator>
-                                    </td>
-                                    <td class="book-cancel1">
-                                        <%--<a href="#"><span class="fa fa-times"></span></a>--%>
-                                        <asp:LinkButton ID="btnDelete" CommandName="Remove" runat="server"><span class="fa fa-times"></span></asp:LinkButton>
-                                    </td>
-                                </tr>
-                            </ItemTemplate>
-                            <LayoutTemplate>
-                                <table>
-                                    <thead>
-                                        <tr>
-                                            <th class="book-name">
-                                                Sản phẩm
-                                            </th>
-                                            <th class="book-number">
-                                                Số lượng
-                                            </th>
-                                            <th class="book-cancel">
-                                                Hủy
-                                            </th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <span runat="server" id="itemPlaceholder"></span>
-                                    </tbody>
-                                </table>
-                            </LayoutTemplate>
-                        </asp:ListView>
-                        <asp:ObjectDataSource ID="odsCart" runat="server" SelectMethod="Cart" TypeName="ShoppingCart2">
-                        </asp:ObjectDataSource>
+                            <asp:ListView ID="ListView1" runat="server" DataSourceID="odsCart" EnableModelValidation="True"
+                                OnItemCommand="ListView1_ItemCommand">
+                                <ItemTemplate>
+                                    <tr>
+                                        <td class="book-name1">
+                                            <%# Eval("ProductName")%>
+                                            <asp:HiddenField ID="hdnProductID" runat="server" Value='<%# Eval("ProductID") %>' />
+                                        </td>
+                                        <td class="book-number1">
+                                            <asp:TextBox ID="txtQuantity" type="number" CssClass="text-number" runat="server"
+                                                Text='<%# Eval("Quantity") %>' OnTextChanged="txtQuantity_TextChanged" AutoPostBack="True"></asp:TextBox>
+                                            <asp:HiddenField ID="hdnQuantity" runat="server" Value='<%# Eval("Quantity") %>' />
+                                            <asp:RegularExpressionValidator ID="RegularExpressionValidator4" runat="server" ControlToValidate="txtQuantity"
+                                                Display="Dynamic" ErrorMessage="Vui lòng nhập số!" ValidationExpression="^[0-9]+$"
+                                                ValidationGroup="SendEmail"></asp:RegularExpressionValidator>
+                                            <asp:RangeValidator ID="RangeValidator" runat="server" ErrorMessage="Bạn nhập quá số lượng cho phép (1 - 12)"
+                                                ControlToValidate="txtQuantity" MaximumValue="12" MinimumValue="1" Type="Integer"
+                                                ValidationGroup="SendEmail" Display="Dynamic"></asp:RangeValidator>
+                                        </td>
+                                        <td class="book-cancel1">
+                                            <%--<a href="#"><span class="fa fa-times"></span></a>--%>
+                                            <asp:LinkButton ID="btnDelete" CommandName="Remove" runat="server"><span class="fa fa-times"></span></asp:LinkButton>
+                                        </td>
+                                    </tr>
+                                </ItemTemplate>
+                                <LayoutTemplate>
+                                    <table>
+                                        <thead>
+                                            <tr>
+                                                <th class="book-name">Sản phẩm
+                                                </th>
+                                                <th class="book-number">Số lượng
+                                                </th>
+                                                <th class="book-cancel">Hủy
+                                                </th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <span runat="server" id="itemPlaceholder"></span>
+                                        </tbody>
+                                    </table>
+                                </LayoutTemplate>
+                            </asp:ListView>
+                            <asp:ObjectDataSource ID="odsCart" runat="server" SelectMethod="Cart" TypeName="ShoppingCart2"></asp:ObjectDataSource>
+                        </div>
                     </div>
-                </div>
                 </div>
                 <div class="form-thongtin">
                     <div class="popup-w">
@@ -218,7 +213,7 @@
                                 Display="Dynamic" ForeColor="Red"></asp:RequiredFieldValidator>
                         </div>
                     </div>
-                      <div class="popup-w">
+                    <div class="popup-w">
                         <label class="popup-lb">
                             Mã xác nhận</label>
                         <div class="popup-input">
@@ -244,13 +239,14 @@
                 </div>
             </ContentTemplate>
         </asp:UpdatePanel>
-      
-        <div class="popup-w">
-            <div class="popup-btn">
-                <asp:Button ID="btGui" ValidationGroup="SendEmail" OnClick="btGui_Click" CssClass="button-btn"
-                    runat="server" Text="ĐẶT HÀNG" />
+        <asp:Panel ID="Panel1" runat="server" DefaultButton="btGui">
+            <div class="popup-w">
+                <div class="popup-btn">
+                    <asp:Button ID="btGui" ValidationGroup="SendEmail" OnClick="btGui_Click" CssClass="button-btn"
+                        runat="server" Text="ĐẶT HÀNG" />
+                </div>
             </div>
-        </div>
+        </asp:Panel>
     </div>
     <div class="popup-btn-close">
         <img src="assets/images/btn-close.png" alt="" />

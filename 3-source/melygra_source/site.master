@@ -400,8 +400,8 @@
                         <div class="footer-bot">
                             <div class="coppy-right">
                                 <p>
-                                    &copy; 2016 MELYGRA. All Right Reserved. <a href="http://www.tranlegroup.com">Thiet
-                                        ke web Tran Le</a></p>
+                                    &copy; 2016 MELYGRA. All Right Reserved. <%--<a href="http://www.tranlegroup.com">Thiet
+                                        ke web Tran Le</a>--%></p>
                             </div>
                             <div class="online">
                                 <ul>
